@@ -14,7 +14,6 @@
 		9A7D95D022AABD4A00F7A89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D95CE22AABD4A00F7A89E /* LaunchScreen.storyboard */; };
 		9A7D95DB22AABD4A00F7A89E /* SpaceOddityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95DA22AABD4A00F7A89E /* SpaceOddityTests.swift */; };
 		9A7D95E622AABD4A00F7A89E /* SpaceOddityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95E522AABD4A00F7A89E /* SpaceOddityUITests.swift */; };
-		9A7D95F522AAC7AB00F7A89E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95F422AAC7AB00F7A89E /* BaseView.swift */; };
 		9A7D95F722AAC7E600F7A89E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95F622AAC7E600F7A89E /* BaseViewController.swift */; };
 		9A7D95F922AAC81800F7A89E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95F822AAC81800F7A89E /* Networking.swift */; };
 		9A7D95FB22AAC83F00F7A89E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95FA22AAC83F00F7A89E /* Parser.swift */; };
@@ -22,6 +21,8 @@
 		9A7D960122AACB1A00F7A89E /* LaunchesServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D960022AACB1A00F7A89E /* LaunchesServiceable.swift */; };
 		9A7D960422AACBF500F7A89E /* LaunchesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D960322AACBF500F7A89E /* LaunchesResponse.swift */; };
 		9A7D960622AAD25E00F7A89E /* LaunchesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D960522AAD25E00F7A89E /* LaunchesNetworkService.swift */; };
+		9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D960F22AAE36500F7A89E /* LaunchesViewController.swift */; };
+		9A7D961222AAE36500F7A89E /* LaunchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D961022AAE36500F7A89E /* LaunchesViewController.xib */; };
 		E38766560B1445BF44C2C0F1 /* Pods_SpaceOddity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F330245FDC78FA2D82F8FF /* Pods_SpaceOddity.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +62,6 @@
 		9A7D95E122AABD4A00F7A89E /* SpaceOddityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceOddityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7D95E522AABD4A00F7A89E /* SpaceOddityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceOddityUITests.swift; sourceTree = "<group>"; };
 		9A7D95E722AABD4A00F7A89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A7D95F422AAC7AB00F7A89E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		9A7D95F622AAC7E600F7A89E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9A7D95F822AAC81800F7A89E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		9A7D95FA22AAC83F00F7A89E /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		9A7D960022AACB1A00F7A89E /* LaunchesServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesServiceable.swift; sourceTree = "<group>"; };
 		9A7D960322AACBF500F7A89E /* LaunchesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesResponse.swift; sourceTree = "<group>"; };
 		9A7D960522AAD25E00F7A89E /* LaunchesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesNetworkService.swift; sourceTree = "<group>"; };
+		9A7D960F22AAE36500F7A89E /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		9A7D961022AAE36500F7A89E /* LaunchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchesViewController.xib; sourceTree = "<group>"; };
 		A389BB9A570AF13BE94884FD /* Pods-SpaceOddityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityUITests/Pods-SpaceOddityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F778B77A46235B9EAD4D262D /* Pods-SpaceOddityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityTests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityTests/Pods-SpaceOddityTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,7 +169,6 @@
 				9A7D95CC22AABD4A00F7A89E /* Assets.xcassets */,
 				9A7D95CE22AABD4A00F7A89E /* LaunchScreen.storyboard */,
 				9A7D95D122AABD4A00F7A89E /* Info.plist */,
-				9A7D95F422AAC7AB00F7A89E /* BaseView.swift */,
 				9A7D95F622AAC7E600F7A89E /* BaseViewController.swift */,
 				9A7D95F822AAC81800F7A89E /* Networking.swift */,
 				9A7D95FA22AAC83F00F7A89E /* Parser.swift */,
@@ -179,6 +180,7 @@
 		9A7D95FE22AACACC00F7A89E /* Launches */ = {
 			isa = PBXGroup;
 			children = (
+				9A7D960722AADC0500F7A89E /* View */,
 				9A7D960222AACBE100F7A89E /* Model */,
 				9A7D95FF22AACAD300F7A89E /* Service */,
 			);
@@ -200,6 +202,15 @@
 				9A7D960322AACBF500F7A89E /* LaunchesResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9A7D960722AADC0500F7A89E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A7D960F22AAE36500F7A89E /* LaunchesViewController.swift */,
+				9A7D961022AAE36500F7A89E /* LaunchesViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BA7B5AABDD2B35A4ED580F53 /* Pods */ = {
@@ -325,6 +336,7 @@
 			files = (
 				9A7D95D022AABD4A00F7A89E /* LaunchScreen.storyboard in Resources */,
 				9A7D95CD22AABD4A00F7A89E /* Assets.xcassets in Resources */,
+				9A7D961222AAE36500F7A89E /* LaunchesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,10 +448,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7D95C622AABD4900F7A89E /* AppDelegate.swift in Sources */,
-				9A7D95F522AAC7AB00F7A89E /* BaseView.swift in Sources */,
 				9A7D95FD22AAC88E00F7A89E /* main.swift in Sources */,
 				9A7D960622AAD25E00F7A89E /* LaunchesNetworkService.swift in Sources */,
 				9A7D960422AACBF500F7A89E /* LaunchesResponse.swift in Sources */,
+				9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */,
 				9A7D960122AACB1A00F7A89E /* LaunchesServiceable.swift in Sources */,
 				9A7D95FB22AAC83F00F7A89E /* Parser.swift in Sources */,
 				9A7D95F722AAC7E600F7A89E /* BaseViewController.swift in Sources */,
@@ -613,6 +625,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/SpaceOddity/Base/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/SpaceOddity/Base/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
