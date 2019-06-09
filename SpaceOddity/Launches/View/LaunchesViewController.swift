@@ -10,17 +10,24 @@ import UIKit
 
 class LaunchesViewController: BaseViewController {
     
-    @IBOutlet weak var launchesTableView: UITableView!
+    @IBOutlet weak var launchesTableView: UITableView! {
+        didSet {
+            launchesTableView.estimatedRowHeight = 200.0
+            launchesTableView.dataSource = self
+            launchesTableView.delegate = self
+            launchesTableView.register(UINib(nibName: LaunchTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: LaunchTableViewCell.reuseIdentifier)
+        }
+    }
     
     private var allLaunches = [Launch]()
     private var filteredLaunches = [Launch]()
     
     private let searchController = UISearchController(searchResultsController: nil)
 
-    private let listingsService: LaunchesServiceable
+    private let launchesService: LaunchesServiceable
     
     required init(service: LaunchesServiceable) {
-        self.listingsService = service
+        self.launchesService = service
         super.init(nibName: String(describing: LaunchesViewController.self), bundle: nil)
     }
     
@@ -30,18 +37,27 @@ class LaunchesViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        edgesForExtendedLayout = []
         setupSearchController()
         fetchAllLaunches()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+    override func initNotificationObservers() {
+        super.initNotificationObservers()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyBoardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyBoardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+    @objc func keyBoardWillShow(notification: NSNotification) {
+        if let keyBoardSize = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect {
+            let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyBoardSize.height, right: 0)
+            launchesTableView.contentInset = contentInsets
+        }
+    }
+    
+    @objc func keyBoardWillHide(notification: NSNotification) {
+        launchesTableView.contentInset = UIEdgeInsets.zero
     }
     
     private func setupSearchController() {
@@ -51,17 +67,37 @@ class LaunchesViewController: BaseViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Launches"
         definesPresentationContext = true
-        launchesTableView.tableHeaderView = searchController.searchBar
+        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.titleView = searchController.searchBar
     }
     
     private func fetchAllLaunches() {
-        listingsService.fetchLaunches { [weak self] (result) in
-            guard let self = self, let launchesResponse = try? result.get() else { return }
+        showLoader()
+        launchesService.fetchLaunches { [weak self] (result) in
+            guard let self = self else { return }
+            
+            self.hideLoader()
+            
+            guard let launchesResponse = try? result.get() else {
+                self.showRetry()
+                return
+                
+            }
             
             self.allLaunches = launchesResponse.launches
-            self.launchesTableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                self?.launchesTableView.reloadData()
+            }
+            
         }
     }
+    
+    private func showRetry() {
+        showRetryAlert(title: "Could not fetch details.", message: "Please retry") { [weak self] in
+            self?.fetchAllLaunches()
+        }
+    }
+    
 }
 
 extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -75,9 +111,17 @@ extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LaunchTableViewCell.reuseIdentifier, for: indexPath) as? LaunchTableViewCell else { return UITableViewCell() }
+        
+        cell.launch = launchesDataSource[indexPath.row]
+        cell.nameLabel.text = "\(indexPath.row) " + (cell.nameLabel.text ?? "")
+        return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 }
 
 extension LaunchesViewController: UISearchResultsUpdating {
@@ -91,8 +135,12 @@ extension LaunchesViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        didSearch(query: searchController.searchBar.text ?? "")
     }
     
+    func didSearch(query: String) {
+        filteredLaunches = allLaunches.filter { ($0.missions.first?.name ?? "").lowercased().contains(query.lowercased()) }
+        launchesTableView.reloadData()
+    }
     
 }

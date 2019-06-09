@@ -23,6 +23,9 @@
 		9A7D960622AAD25E00F7A89E /* LaunchesNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D960522AAD25E00F7A89E /* LaunchesNetworkService.swift */; };
 		9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D960F22AAE36500F7A89E /* LaunchesViewController.swift */; };
 		9A7D961222AAE36500F7A89E /* LaunchesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D961022AAE36500F7A89E /* LaunchesViewController.xib */; };
+		9A7D961522AC511500F7A89E /* LaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D961322AC511400F7A89E /* LaunchTableViewCell.swift */; };
+		9A7D961622AC511500F7A89E /* LaunchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D961422AC511400F7A89E /* LaunchTableViewCell.xib */; };
+		9A7D961822AC5CD200F7A89E /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D961722AC5CD200F7A89E /* ReuseIdentifiable.swift */; };
 		E38766560B1445BF44C2C0F1 /* Pods_SpaceOddity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F330245FDC78FA2D82F8FF /* Pods_SpaceOddity.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 		9A7D960522AAD25E00F7A89E /* LaunchesNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesNetworkService.swift; sourceTree = "<group>"; };
 		9A7D960F22AAE36500F7A89E /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		9A7D961022AAE36500F7A89E /* LaunchesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchesViewController.xib; sourceTree = "<group>"; };
+		9A7D961322AC511400F7A89E /* LaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewCell.swift; sourceTree = "<group>"; };
+		9A7D961422AC511400F7A89E /* LaunchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchTableViewCell.xib; sourceTree = "<group>"; };
+		9A7D961722AC5CD200F7A89E /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		A389BB9A570AF13BE94884FD /* Pods-SpaceOddityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityUITests/Pods-SpaceOddityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F778B77A46235B9EAD4D262D /* Pods-SpaceOddityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityTests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityTests/Pods-SpaceOddityTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +179,7 @@
 				9A7D95F822AAC81800F7A89E /* Networking.swift */,
 				9A7D95FA22AAC83F00F7A89E /* Parser.swift */,
 				9A7D95FC22AAC88E00F7A89E /* main.swift */,
+				9A7D961722AC5CD200F7A89E /* ReuseIdentifiable.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -209,6 +216,8 @@
 			children = (
 				9A7D960F22AAE36500F7A89E /* LaunchesViewController.swift */,
 				9A7D961022AAE36500F7A89E /* LaunchesViewController.xib */,
+				9A7D961322AC511400F7A89E /* LaunchTableViewCell.swift */,
+				9A7D961422AC511400F7A89E /* LaunchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 			files = (
 				9A7D95D022AABD4A00F7A89E /* LaunchScreen.storyboard in Resources */,
 				9A7D95CD22AABD4A00F7A89E /* Assets.xcassets in Resources */,
+				9A7D961622AC511500F7A89E /* LaunchTableViewCell.xib in Resources */,
 				9A7D961222AAE36500F7A89E /* LaunchesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,11 +458,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7D95C622AABD4900F7A89E /* AppDelegate.swift in Sources */,
+				9A7D961822AC5CD200F7A89E /* ReuseIdentifiable.swift in Sources */,
 				9A7D95FD22AAC88E00F7A89E /* main.swift in Sources */,
 				9A7D960622AAD25E00F7A89E /* LaunchesNetworkService.swift in Sources */,
 				9A7D960422AACBF500F7A89E /* LaunchesResponse.swift in Sources */,
 				9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */,
 				9A7D960122AACB1A00F7A89E /* LaunchesServiceable.swift in Sources */,
+				9A7D961522AC511500F7A89E /* LaunchTableViewCell.swift in Sources */,
 				9A7D95FB22AAC83F00F7A89E /* Parser.swift in Sources */,
 				9A7D95F722AAC7E600F7A89E /* BaseViewController.swift in Sources */,
 				9A7D95F922AAC81800F7A89E /* Networking.swift in Sources */,

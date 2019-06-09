@@ -11,6 +11,19 @@ import MBProgressHUD
 
 class BaseViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initNotificationObservers()
+    }
+    
+    func initNotificationObservers() {
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func showLoader() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
