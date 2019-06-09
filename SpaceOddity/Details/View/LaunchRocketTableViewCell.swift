@@ -10,4 +10,22 @@ import UIKit
 
 class LaunchRocketTableViewCell: UITableViewCell, ReuseIdentifiable {
     
+    @IBOutlet weak var rocketImageView: UIImageView!
+    
+    @IBOutlet weak var rocketNameLabel: PaddingLabel! {
+        didSet {
+            rocketNameLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+            rocketNameLabel.textColor = .white
+        }
+    }
+    
+    var rocket: Rocket? {
+        didSet {
+            guard let rocket = rocket else {
+                return
+            }
+            rocketNameLabel.text = rocket.name
+            rocketImageView.sd_setImage(with: URL(string: rocket.imageURL), completed: nil)
+        }
+    }
 }

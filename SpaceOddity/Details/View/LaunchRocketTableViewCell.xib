@@ -25,15 +25,41 @@
                             <constraint firstAttribute="height" constant="184" id="nzI-h3-u5W"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuS-2J-XS0" customClass="PaddingLabel" customModule="SpaceOddity" customModuleProvider="target">
+                        <rect key="frame" x="215.5" y="90" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="klb-aa-2Hl" secondAttribute="bottom" constant="8" id="Arq-TS-4fk"/>
                     <constraint firstAttribute="trailing" secondItem="klb-aa-2Hl" secondAttribute="trailing" id="DMp-DX-ow0"/>
+                    <constraint firstItem="NuS-2J-XS0" firstAttribute="centerY" secondItem="klb-aa-2Hl" secondAttribute="centerY" id="GGu-be-5SH"/>
                     <constraint firstItem="klb-aa-2Hl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="rZm-u4-kzI"/>
+                    <constraint firstItem="NuS-2J-XS0" firstAttribute="centerX" secondItem="klb-aa-2Hl" secondAttribute="centerX" id="y64-tj-7JR"/>
                     <constraint firstItem="klb-aa-2Hl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zOw-ng-sdY"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="rocketImageView" destination="klb-aa-2Hl" id="pEi-8o-0MN"/>
+                <outlet property="rocketNameLabel" destination="NuS-2J-XS0" id="JDZ-kg-5sD"/>
+            </connections>
             <point key="canvasLocation" x="158.69565217391306" y="121.875"/>
         </tableViewCell>
     </objects>

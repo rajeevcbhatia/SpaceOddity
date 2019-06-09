@@ -37,6 +37,7 @@
 		9A7D963222AD313C00F7A89E /* LaunchLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D963022AD313C00F7A89E /* LaunchLocationTableViewCell.xib */; };
 		9A7D963422AD3C0200F7A89E /* MockLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963322AD3C0200F7A89E /* MockLaunchesService.swift */; };
 		9A7D963622AD3E2700F7A89E /* LaunchesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963522AD3E2700F7A89E /* LaunchesViewControllerTests.swift */; };
+		9A7D963822AD5D4000F7A89E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963722AD5D4000F7A89E /* PaddingLabel.swift */; };
 		E38766560B1445BF44C2C0F1 /* Pods_SpaceOddity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F330245FDC78FA2D82F8FF /* Pods_SpaceOddity.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		9A7D963022AD313C00F7A89E /* LaunchLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchLocationTableViewCell.xib; sourceTree = "<group>"; };
 		9A7D963322AD3C0200F7A89E /* MockLaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchesService.swift; sourceTree = "<group>"; };
 		9A7D963522AD3E2700F7A89E /* LaunchesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewControllerTests.swift; sourceTree = "<group>"; };
+		9A7D963722AD5D4000F7A89E /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		A389BB9A570AF13BE94884FD /* Pods-SpaceOddityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityUITests/Pods-SpaceOddityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F778B77A46235B9EAD4D262D /* Pods-SpaceOddityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityTests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityTests/Pods-SpaceOddityTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 				9A7D95FA22AAC83F00F7A89E /* Parser.swift */,
 				9A7D95FC22AAC88E00F7A89E /* main.swift */,
 				9A7D961722AC5CD200F7A89E /* ReuseIdentifiable.swift */,
+				9A7D963722AD5D4000F7A89E /* PaddingLabel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */,
 				9A7D963122AD313C00F7A89E /* LaunchLocationTableViewCell.swift in Sources */,
 				9A7D962122AD30A200F7A89E /* LaunchSummaryTableViewCell.swift in Sources */,
+				9A7D963822AD5D4000F7A89E /* PaddingLabel.swift in Sources */,
 				9A7D960122AACB1A00F7A89E /* LaunchesServiceable.swift in Sources */,
 				9A7D961522AC511500F7A89E /* LaunchTableViewCell.swift in Sources */,
 				9A7D95FB22AAC83F00F7A89E /* Parser.swift in Sources */,
