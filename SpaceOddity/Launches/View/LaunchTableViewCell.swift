@@ -31,7 +31,7 @@ class LaunchTableViewCell: UITableViewCell, ReuseIdentifiable {
             guard let launch = launch else { return }
             
             nameLabel.attributedText = NSAttributedString(string: launch.name, attributes: strokeTextAttributes)
-            timeLabel.attributedText = NSAttributedString(string: launch.net, attributes: strokeTextAttributes)
+            timeLabel.attributedText = NSAttributedString(string: launch.dateString, attributes: strokeTextAttributes)
             statusLabel.backgroundColor = launch.statusColor
             statusLabel.attributedText = NSAttributedString(string: launch.statusName, attributes: strokeTextAttributes)
             

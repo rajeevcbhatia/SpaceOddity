@@ -15,17 +15,25 @@ struct LaunchesResponse: Codable {
 
 struct Launch: Codable {
     let id: Int
-    let name, net: String
+    let name: String
     let netstamp: Int
     private let status: Int
-    let vidURLs: [String]//infoURL and vidURL will be deprecated
-    let infoURLs: [String]
-    let hashtag: String?
-    let changed: String
+    let vidURLs: [String]
     let location: Location
     let rocket: Rocket
     let missions: [Mission]
-    let lsp: LaunchServiceProvider
+    let lsp: LaunchProvider
+    
+    var dateString: String {
+        let date = Date(timeIntervalSince1970: TimeInterval(netstamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a, EEEE, MMM d, yyyy"
+        return dateFormatter.string(from: date)
+    }
+    
+    var missionName: String {
+        return missions.first?.name ?? ""
+    }
     
     //this is a hack. in the prod app, the statuses would be downloaded from the API
     var statusName: String {
@@ -70,7 +78,7 @@ struct Pad: Codable {
     let latitude, longitude: Double
 }
 
-struct LaunchServiceProvider: Codable {
+struct LaunchProvider: Codable {
     let id: Int
     let name, countryCode: String
     let wikiURL: String?
@@ -92,7 +100,7 @@ struct Mission: Codable {
 
 struct Rocket: Codable {
     let id: Int
-    let name, configuration, familyname: String
+    let name: String
     let wikiURL: String
     let infoURLs: [String]
     let imageSizes: [Int]

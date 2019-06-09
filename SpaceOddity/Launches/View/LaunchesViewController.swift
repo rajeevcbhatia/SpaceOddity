@@ -20,7 +20,7 @@ class LaunchesViewController: BaseViewController {
     }
     
     private var allLaunches = [Launch]()
-    private var filteredLaunches = [Launch]()
+    var filteredLaunches = [Launch]() //this is not made private for testing. alternate approach to this could be to also make a dependency injectable for the searchController so that the "isActive" can be mocked and "isFiltering" can also be used in tests
     
     private let searchController = UISearchController(searchResultsController: nil)
 
@@ -139,7 +139,7 @@ extension LaunchesViewController: UISearchResultsUpdating {
     }
     
     func didSearch(query: String) {
-        filteredLaunches = allLaunches.filter { ($0.missions.first?.name ?? "").lowercased().contains(query.lowercased()) }
+        filteredLaunches = allLaunches.filter { $0.missionName.lowercased().contains(query.lowercased()) }
         launchesTableView.reloadData()
     }
     

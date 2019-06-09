@@ -9,7 +9,7 @@
 import Foundation
 
 //generally this would be in a URLBuilder with separate parameters for version, path, number of launches etc but since this app is only dealing with one request, I am leaving it here
-private let launchesPath = "https://launchlibrary.net/1.4/launch/next/100"
+private let launchesPath = "https://launchlibrary.net/1.4/launch/next/10"
 
 class LaunchesNetworkService: LaunchesServiceable {
     
