@@ -12,12 +12,7 @@ class LaunchRocketTableViewCell: UITableViewCell, ReuseIdentifiable {
     
     @IBOutlet weak var rocketImageView: UIImageView!
     
-    @IBOutlet weak var rocketNameLabel: PaddingLabel! {
-        didSet {
-            rocketNameLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-            rocketNameLabel.textColor = .white
-        }
-    }
+    @IBOutlet weak var rocketNameLabel: PaddingLabel!
     
     var rocket: Rocket? {
         didSet {

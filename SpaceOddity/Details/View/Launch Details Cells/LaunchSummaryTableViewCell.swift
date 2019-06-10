@@ -9,6 +9,7 @@
 import UIKit
 
 class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
+    
     var launch: Launch? {
         didSet {
             

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 struct LaunchesResponse: Codable {
     let launches: [Launch]
@@ -63,13 +64,17 @@ struct Launch: Codable {
 }
 
 struct Location: Codable {
-    let pads: [Pad]
+    private let pads: [Pad]
     let id: Int
     let name: String
     let countryCode: String
+    var coordinate: CLLocationCoordinate2D? {
+        guard let pad = pads.first else { return nil }
+        return CLLocationCoordinate2D(latitude: pad.latitude, longitude: pad.longitude)
+    }
 }
 
-struct Pad: Codable {
+private struct Pad: Codable {
     let id: Int
     let name: String
     let infoURL: String?

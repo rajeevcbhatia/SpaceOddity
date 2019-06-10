@@ -122,6 +122,17 @@ extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let launch = launchesDataSource[indexPath.row]
+        showDetails(for: launch)
+    }
+    
+    private func showDetails(for launch: Launch) {
+        let detailsVC = LaunchDetailsViewController(launch: launch)
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
 }
 
 extension LaunchesViewController: UISearchResultsUpdating {

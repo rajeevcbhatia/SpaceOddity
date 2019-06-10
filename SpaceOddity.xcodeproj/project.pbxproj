@@ -262,6 +262,14 @@
 			children = (
 				9A7D961A22AD2D4700F7A89E /* LaunchDetailsViewController.swift */,
 				9A7D961B22AD2D4700F7A89E /* LaunchDetailsViewController.xib */,
+				9A7D963922AD69A000F7A89E /* Launch Details Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A7D963922AD69A000F7A89E /* Launch Details Cells */ = {
+			isa = PBXGroup;
+			children = (
 				9A7D961F22AD30A200F7A89E /* LaunchSummaryTableViewCell.swift */,
 				9A7D962022AD30A200F7A89E /* LaunchSummaryTableViewCell.xib */,
 				9A7D962722AD310900F7A89E /* LaunchRocketTableViewCell.swift */,
@@ -271,7 +279,7 @@
 				9A7D962F22AD313C00F7A89E /* LaunchLocationTableViewCell.swift */,
 				9A7D963022AD313C00F7A89E /* LaunchLocationTableViewCell.xib */,
 			);
-			path = View;
+			path = "Launch Details Cells";
 			sourceTree = "<group>";
 		};
 		BA7B5AABDD2B35A4ED580F53 /* Pods */ = {
