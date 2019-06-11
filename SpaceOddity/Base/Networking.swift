@@ -10,6 +10,9 @@ import Foundation
 
 class Networking {
     
+    //should not be initialised
+    private init() { }
+    
     static func sendRequest(with path: String, completion: @escaping (Result<Data, ConnectionError>) -> Void) {
         
         guard let url = URL(string: path) else {

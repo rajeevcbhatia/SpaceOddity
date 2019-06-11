@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LaunchSummaryTableViewCell" rowHeight="148" id="KGk-i7-Jjw" customClass="LaunchSummaryTableViewCell" customModule="SpaceOddity" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="379" height="148"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LaunchSummaryTableViewCell" rowHeight="151" id="KGk-i7-Jjw" customClass="LaunchSummaryTableViewCell" customModule="SpaceOddity" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="151"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="379" height="147.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="379" height="150.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbW-Jc-wiS" userLabel="Name Label">
@@ -25,14 +25,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAf-5j-0cM">
-                        <rect key="frame" x="16" y="46.5" width="347" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAf-5j-0cM">
+                        <rect key="frame" x="16" y="46.5" width="347" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-qe-WpV">
-                        <rect key="frame" x="69.5" y="83.5" width="240" height="48"/>
+                        <rect key="frame" x="69.5" y="86.5" width="240" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="0gf-y3-JMh"/>
                             <constraint firstAttribute="width" constant="240" id="MGM-RQ-UZA"/>
@@ -53,6 +53,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countdownLabel" destination="cAf-5j-0cM" id="Kl9-Mw-zuL"/>
+                <outlet property="nameLabel" destination="CbW-Jc-wiS" id="zGr-Sw-h6J"/>
+            </connections>
             <point key="canvasLocation" x="90.579710144927546" y="103.125"/>
         </tableViewCell>
     </objects>

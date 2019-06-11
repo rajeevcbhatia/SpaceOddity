@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class LaunchDetailsViewController: BaseViewController {
 
@@ -66,6 +67,12 @@ extension LaunchDetailsViewController: UITableViewDataSource, UITableViewDelegat
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let launch = launch else { return }
+        let currentType = detailsRows[indexPath.row]
+        currentType.didSelect(with: launch)
+    }
+    
 }
 
 private enum DetailsRowType {
@@ -103,6 +110,19 @@ private enum DetailsRowType {
             guard let locationCell = tableView.dequeueReusableCell(withIdentifier: LaunchLocationTableViewCell.reuseIdentifier, for: indexPath) as? LaunchLocationTableViewCell else { return UITableViewCell() }
             locationCell.location = launch.location
             return locationCell
+        }
+    }
+    
+    func didSelect(with launch: Launch) {
+        switch self {
+        case .location:
+            guard let coordinate = launch.location.coordinate else { return }
+            let destination = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+            destination.name = launch.name
+            
+            MKMapItem.openMaps(with: [destination], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        default:
+            return
         }
     }
 }

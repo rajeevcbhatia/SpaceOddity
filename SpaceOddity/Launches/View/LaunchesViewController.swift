@@ -115,7 +115,7 @@ extension LaunchesViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: LaunchTableViewCell.reuseIdentifier, for: indexPath) as? LaunchTableViewCell else { return UITableViewCell() }
         
         cell.launch = launchesDataSource[indexPath.row]
-        cell.nameLabel.text = "\(indexPath.row) " + (cell.nameLabel.text ?? "")
+        
         return cell
     }
     

@@ -36,7 +36,7 @@ struct Launch: Codable {
         return missions.first?.name ?? ""
     }
     
-    //this is a hack. in the prod app, the statuses would be downloaded from the API
+    //this is a hack. in a prod app, the statuses would be downloaded from the API. also the status names would be enums and not used as raw strings
     var statusName: String {
         switch status {
         case 1:

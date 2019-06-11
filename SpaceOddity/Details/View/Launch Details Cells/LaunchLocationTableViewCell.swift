@@ -15,11 +15,12 @@ class LaunchLocationTableViewCell: UITableViewCell, ReuseIdentifiable {
     @IBOutlet weak var mapView: MKMapView!
     var location: Location? {
         didSet {
-            guard let location = location, let coordinte = location.coordinate else { return }
+            guard let location = location, let coordinate = location.coordinate else { return }
             nameLabel.text = location.name
-            mapView.setCenter(coordinte, animated: false)
-            
+            let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: CLLocationDistance(integerLiteral: 10000), longitudinalMeters: CLLocationDistance(integerLiteral: 10000))
+            mapView.setRegion(coordinateRegion, animated: true)
+            mapView.isUserInteractionEnabled = false
+            mapView.addAnnotation(LocationAnnotation.init(title: location.name, coordinate: coordinate))
         }
     }
-    
 }
