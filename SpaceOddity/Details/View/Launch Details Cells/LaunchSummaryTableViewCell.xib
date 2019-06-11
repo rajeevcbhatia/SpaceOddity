@@ -33,11 +33,18 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-qe-WpV">
                         <rect key="frame" x="69.5" y="86.5" width="240" height="48"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.802734375" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="0gf-y3-JMh"/>
                             <constraint firstAttribute="width" constant="240" id="MGM-RQ-UZA"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <state key="normal" title="Show Details">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="showDetailsAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8EB-go-dDF"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -56,6 +63,7 @@
             <connections>
                 <outlet property="countdownLabel" destination="cAf-5j-0cM" id="Kl9-Mw-zuL"/>
                 <outlet property="nameLabel" destination="CbW-Jc-wiS" id="zGr-Sw-h6J"/>
+                <outlet property="showDetailsButton" destination="gtL-qe-WpV" id="XMz-Rz-IeN"/>
             </connections>
             <point key="canvasLocation" x="90.579710144927546" y="103.125"/>
         </tableViewCell>

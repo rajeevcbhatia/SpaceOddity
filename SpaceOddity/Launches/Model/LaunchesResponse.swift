@@ -20,10 +20,21 @@ struct Launch: Codable {
     let netstamp: Int
     private let status: Int
     let vidURLs: [String]
+    let infoURLs: [String]
     let location: Location
     let rocket: Rocket
     let missions: [Mission]
     let lsp: LaunchProvider
+    
+    var detailsURL: URL? {
+        if let vidURL = vidURLs.first, vidURL.count > 0 {
+            return URL(string: vidURL)
+        }
+        if let infoURL = infoURLs.first, infoURL.count > 0 {
+            return URL(string: infoURL)
+        }
+        return rocket.infoURL
+    }
     
     var dateString: String {
         let date = Date(timeIntervalSince1970: TimeInterval(netstamp))
@@ -110,4 +121,13 @@ struct Rocket: Codable {
     let infoURLs: [String]
     let imageSizes: [Int]
     let imageURL: String
+    
+    var infoURL: URL? {
+        if wikiURL.count > 0 {
+            return URL(string: wikiURL)
+        } else if let firstInfoURL = infoURLs.first, firstInfoURL.count > 0 {
+            return URL(string: firstInfoURL)
+        }
+        return nil
+    }
 }

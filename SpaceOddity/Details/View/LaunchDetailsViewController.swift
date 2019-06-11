@@ -121,6 +121,9 @@ private enum DetailsRowType {
             destination.name = launch.name
             
             MKMapItem.openMaps(with: [destination], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+        case .rocket:
+            guard let infoURL = launch.rocket.infoURL else { return }
+            UIApplication.shared.open(infoURL, options: [:], completionHandler: nil)
         default:
             return
         }

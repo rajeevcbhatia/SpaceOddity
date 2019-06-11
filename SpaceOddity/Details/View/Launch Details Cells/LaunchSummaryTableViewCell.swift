@@ -12,6 +12,13 @@ class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var showDetailsButton: UIButton!
+    
+    @IBAction func showDetailsAction(_ sender: Any) {
+        if let detailsURL = launch?.detailsURL {
+            UIApplication.shared.open(detailsURL, options: [:], completionHandler: nil)
+        }
+    }
     
     var countdownTimer: Timer?
     
@@ -25,6 +32,7 @@ class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
                 startTimer()
                 updateTime()
             }
+            if launch.detailsURL == nil { showDetailsButton.isEnabled = false; showDetailsButton.setTitle("Details unavailable", for: .normal) }
         }
     }
     
