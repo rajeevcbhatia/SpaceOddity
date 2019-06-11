@@ -18,6 +18,7 @@ class LaunchLocationTableViewCell: UITableViewCell, ReuseIdentifiable {
             guard let location = location, let coordinte = location.coordinate else { return }
             nameLabel.text = location.name
             mapView.setCenter(coordinte, animated: false)
+            
         }
     }
     

@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LaunchTableViewCell" rowHeight="200" id="KGk-i7-Jjw" customClass="LaunchTableViewCell" customModule="SpaceOddity" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LaunchTableViewCell" rowHeight="200" id="KGk-i7-Jjw" customClass="LaunchTableViewCell" customModule="SpaceOddity" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="395" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -21,60 +21,47 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mpA-Ke-eqX">
                         <rect key="frame" x="0.0" y="8" width="395" height="183.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="183.5" id="e8g-hP-tyH"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-FT-qPt" userLabel="Name">
-                        <rect key="frame" x="16" y="22.5" width="42" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-FT-qPt" userLabel="Name" customClass="PaddingLabel" customModule="SpaceOddity" customModuleProvider="target">
+                        <rect key="frame" x="16" y="24" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7y-oI-bwb" userLabel="Time">
-                        <rect key="frame" x="16" y="51" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7y-oI-bwb" userLabel="Time" customClass="PaddingLabel" customModule="SpaceOddity" customModuleProvider="target">
+                        <rect key="frame" x="16" y="159" width="305" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9t-Kc-ZNy" userLabel="Status">
-                        <rect key="frame" x="337" y="22.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS3-iO-376" userLabel="Location Name">
-                        <rect key="frame" x="16" y="125.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxO-NO-6T4" userLabel="Agency">
-                        <rect key="frame" x="16" y="154.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9t-Kc-ZNy" userLabel="Status" customClass="PaddingLabel" customModule="SpaceOddity" customModuleProvider="target">
+                        <rect key="frame" x="337" y="158.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="t9t-Kc-ZNy" firstAttribute="top" secondItem="vU8-FT-qPt" secondAttribute="top" id="BPL-BW-V5y"/>
+                    <constraint firstItem="mpA-Ke-eqX" firstAttribute="bottom" secondItem="q7y-oI-bwb" secondAttribute="bottom" constant="12" id="0Sm-UC-e6B"/>
                     <constraint firstItem="vU8-FT-qPt" firstAttribute="leading" secondItem="mpA-Ke-eqX" secondAttribute="leading" constant="16" id="C5O-S3-vD6"/>
                     <constraint firstItem="mpA-Ke-eqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ea3-D6-jjp"/>
-                    <constraint firstItem="mpA-Ke-eqX" firstAttribute="bottom" secondItem="sxO-NO-6T4" secondAttribute="bottom" constant="16" id="Fi9-9w-VCY"/>
-                    <constraint firstItem="hS3-iO-376" firstAttribute="leading" secondItem="sxO-NO-6T4" secondAttribute="leading" id="L8j-ta-wg7"/>
-                    <constraint firstItem="mpA-Ke-eqX" firstAttribute="top" secondItem="vU8-FT-qPt" secondAttribute="bottom" constant="-35" id="NeK-xj-ss5"/>
+                    <constraint firstItem="vU8-FT-qPt" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="mpA-Ke-eqX" secondAttribute="trailing" multiplier="0.8" id="SWA-bh-xwh"/>
                     <constraint firstAttribute="trailing" secondItem="mpA-Ke-eqX" secondAttribute="trailing" id="T7V-RG-s06"/>
-                    <constraint firstItem="q7y-oI-bwb" firstAttribute="top" secondItem="vU8-FT-qPt" secondAttribute="bottom" constant="8" id="VB9-u3-AEN"/>
                     <constraint firstItem="q7y-oI-bwb" firstAttribute="leading" secondItem="vU8-FT-qPt" secondAttribute="leading" id="Vjb-P5-CkA"/>
                     <constraint firstItem="mpA-Ke-eqX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="YDz-jO-jmp"/>
-                    <constraint firstItem="sxO-NO-6T4" firstAttribute="top" secondItem="hS3-iO-376" secondAttribute="bottom" constant="8" id="doa-B1-sDe"/>
-                    <constraint firstItem="sxO-NO-6T4" firstAttribute="leading" secondItem="mpA-Ke-eqX" secondAttribute="leading" constant="16" id="ijA-hQ-BjN"/>
+                    <constraint firstItem="t9t-Kc-ZNy" firstAttribute="bottom" secondItem="q7y-oI-bwb" secondAttribute="bottom" id="c5B-ZL-tfi"/>
+                    <constraint firstItem="vU8-FT-qPt" firstAttribute="top" secondItem="mpA-Ke-eqX" secondAttribute="top" constant="16" id="hiI-vc-2ki"/>
                     <constraint firstAttribute="bottom" secondItem="mpA-Ke-eqX" secondAttribute="bottom" constant="8" id="j8b-7K-WRL"/>
                     <constraint firstItem="mpA-Ke-eqX" firstAttribute="trailing" secondItem="t9t-Kc-ZNy" secondAttribute="trailing" constant="16" id="lx7-ml-wPh"/>
+                    <constraint firstItem="t9t-Kc-ZNy" firstAttribute="leading" relation="lessThanOrEqual" secondItem="q7y-oI-bwb" secondAttribute="trailing" constant="16" id="sae-vf-bn6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="agencyDetailsLabel" destination="sxO-NO-6T4" id="mpw-7k-h1q"/>
                 <outlet property="bgImageView" destination="mpA-Ke-eqX" id="ZZc-Uf-esX"/>
-                <outlet property="locationNameLabel" destination="hS3-iO-376" id="j6I-Ty-feO"/>
                 <outlet property="nameLabel" destination="vU8-FT-qPt" id="cvR-c6-7Qh"/>
                 <outlet property="statusLabel" destination="t9t-Kc-ZNy" id="mJ7-Gr-vH8"/>
                 <outlet property="timeLabel" destination="q7y-oI-bwb" id="fnB-eg-ztb"/>

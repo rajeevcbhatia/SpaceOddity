@@ -28,7 +28,7 @@ struct Launch: Codable {
     var dateString: String {
         let date = Date(timeIntervalSince1970: TimeInterval(netstamp))
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a, EEEE, MMM d, yyyy"
+        dateFormatter.dateFormat = "h:mm a, EEEE\nMMM d, yyyy"
         return dateFormatter.string(from: date)
     }
     

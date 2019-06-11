@@ -10,7 +10,7 @@ import UIKit
 
 class LaunchMissionTableViewCell: UITableViewCell, ReuseIdentifiable {
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: PaddingLabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     var mission: Mission? {
         didSet {

@@ -19,17 +19,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="361" height="152.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ild-WL-KPh">
-                        <rect key="frame" x="8" y="8" width="345" height="136.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ild-WL-KPh">
+                        <rect key="frame" x="8" y="12" width="345" height="128.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-YN-auU">
-                                <rect key="frame" x="0.0" y="0.0" width="345" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbZ-YN-auU" customClass="PaddingLabel" customModule="SpaceOddity" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="345" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR7-jD-p9V">
-                                <rect key="frame" x="0.0" y="28.5" width="345" height="108"/>
+                                <rect key="frame" x="0.0" y="36" width="345" height="92.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ild-WL-KPh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="47I-z3-4tV"/>
+                    <constraint firstItem="ild-WL-KPh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="47I-z3-4tV"/>
                     <constraint firstAttribute="trailing" secondItem="ild-WL-KPh" secondAttribute="trailing" constant="8" id="7Dz-XS-i7d"/>
                     <constraint firstItem="ild-WL-KPh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="kZ6-29-thv"/>
-                    <constraint firstAttribute="bottom" secondItem="ild-WL-KPh" secondAttribute="bottom" constant="8" id="r75-dv-7d6"/>
+                    <constraint firstAttribute="bottom" secondItem="ild-WL-KPh" secondAttribute="bottom" constant="12" id="r75-dv-7d6"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
