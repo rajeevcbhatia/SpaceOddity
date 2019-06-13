@@ -20,7 +20,7 @@ class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
         }
     }
     
-    var countdownTimer: Timer?
+    weak var countdownTimer: Timer?
     
     var launch: Launch? {
         didSet {
@@ -45,7 +45,10 @@ class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
     
     private func startTimer() {
         
-        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        // do not use scheduledTimer with target and selector. causes memory leak here. if iOS9 is to be supported and this API is not available, dealloc timer in view willMoveToSuperview when superview is nil
+        countdownTimer  = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
+            self?.updateTime()
+        })
     }
     
     @objc private func updateTime() {

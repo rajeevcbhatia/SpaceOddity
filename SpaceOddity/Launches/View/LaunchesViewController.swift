@@ -146,7 +146,7 @@ extension LaunchesViewController: UISearchResultsUpdating {
     }
     
     func didSearch(query: String) {
-        filteredLaunches = allLaunches.filter { $0.missionName.lowercased().contains(query.lowercased()) }
+        filteredLaunches = allLaunches.filter { $0.searcheableParameter.lowercased().contains(query.lowercased()) }
         launchesTableView.reloadData()
     }
     

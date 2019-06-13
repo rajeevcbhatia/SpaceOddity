@@ -39,6 +39,8 @@
 		9A7D963622AD3E2700F7A89E /* LaunchesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963522AD3E2700F7A89E /* LaunchesViewControllerTests.swift */; };
 		9A7D963822AD5D4000F7A89E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963722AD5D4000F7A89E /* PaddingLabel.swift */; };
 		9A7D963D22AF974700F7A89E /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963C22AF974700F7A89E /* LocationAnnotation.swift */; };
+		9ADB4FC622B06E7800A4EAAA /* DetailsRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB4FC522B06E7800A4EAAA /* DetailsRowType.swift */; };
+		9ADB4FC822B06EFE00A4EAAA /* LaunchDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB4FC722B06EFE00A4EAAA /* LaunchDetailsTests.swift */; };
 		E38766560B1445BF44C2C0F1 /* Pods_SpaceOddity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27F330245FDC78FA2D82F8FF /* Pods_SpaceOddity.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		9A7D963522AD3E2700F7A89E /* LaunchesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewControllerTests.swift; sourceTree = "<group>"; };
 		9A7D963722AD5D4000F7A89E /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		9A7D963C22AF974700F7A89E /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		9ADB4FC522B06E7800A4EAAA /* DetailsRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRowType.swift; sourceTree = "<group>"; };
+		9ADB4FC722B06EFE00A4EAAA /* LaunchDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsTests.swift; sourceTree = "<group>"; };
 		A389BB9A570AF13BE94884FD /* Pods-SpaceOddityUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityUITests/Pods-SpaceOddityUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F778B77A46235B9EAD4D262D /* Pods-SpaceOddityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddityTests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceOddityTests/Pods-SpaceOddityTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +187,7 @@
 				9A7D95DC22AABD4A00F7A89E /* Info.plist */,
 				9A7D963322AD3C0200F7A89E /* MockLaunchesService.swift */,
 				9A7D963522AD3E2700F7A89E /* LaunchesViewControllerTests.swift */,
+				9ADB4FC722B06EFE00A4EAAA /* LaunchDetailsTests.swift */,
 			);
 			path = SpaceOddityTests;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 		9A7D961E22AD301300F7A89E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9ADB4FC522B06E7800A4EAAA /* DetailsRowType.swift */,
 				9A7D961A22AD2D4700F7A89E /* LaunchDetailsViewController.swift */,
 				9A7D961B22AD2D4700F7A89E /* LaunchDetailsViewController.xib */,
 				9A7D963922AD69A000F7A89E /* Launch Details Cells */,
@@ -536,6 +542,7 @@
 				9A7D961C22AD2D4700F7A89E /* LaunchDetailsViewController.swift in Sources */,
 				9A7D960422AACBF500F7A89E /* LaunchesResponse.swift in Sources */,
 				9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */,
+				9ADB4FC622B06E7800A4EAAA /* DetailsRowType.swift in Sources */,
 				9A7D963122AD313C00F7A89E /* LaunchLocationTableViewCell.swift in Sources */,
 				9A7D962122AD30A200F7A89E /* LaunchSummaryTableViewCell.swift in Sources */,
 				9A7D963822AD5D4000F7A89E /* PaddingLabel.swift in Sources */,
@@ -551,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ADB4FC822B06EFE00A4EAAA /* LaunchDetailsTests.swift in Sources */,
 				9A7D963422AD3C0200F7A89E /* MockLaunchesService.swift in Sources */,
 				9A7D963622AD3E2700F7A89E /* LaunchesViewControllerTests.swift in Sources */,
 			);

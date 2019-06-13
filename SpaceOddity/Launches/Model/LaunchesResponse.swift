@@ -43,7 +43,8 @@ struct Launch: Codable {
         return dateFormatter.string(from: date)
     }
     
-    var missionName: String {
+    // this is called searcheableParameter so that the model makes the business decision about what is to be searched, not the VC
+    var searcheableParameter: String {
         return missions.first?.name ?? ""
     }
     
