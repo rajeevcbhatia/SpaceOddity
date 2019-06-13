@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func showLaunchesScreen() {
-        let launchesService = LaunchesNetworkService()
-        let launchesViewController = LaunchesViewController(service: launchesService)
+        let launchesViewController = LaunchesViewController(service: ProcessInfo.processInfo.currentService)
         let navController = UINavigationController(rootViewController: launchesViewController)
         
         window?.rootViewController = navController
@@ -29,3 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+private extension ProcessInfo {
+    
+    var currentService: LaunchesServiceable {
+        if arguments.contains("testHappyFlow") {
+            return MockLaunchesService()
+        } else if arguments.contains("testErrorFlow") {
+            return MockLaunchesService(responseString: MockLaunches.failureResponseString)
+        } else {
+            return LaunchesNetworkService()
+        }
+    }
+    
+}

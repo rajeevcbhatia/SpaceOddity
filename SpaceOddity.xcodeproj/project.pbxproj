@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		25DF09E50F45DC362B73415E /* libPods-SpaceOddityUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92632AC9156445D5865F7839 /* libPods-SpaceOddityUITests.a */; };
 		52719CF4DD9021C513A4C3A3 /* libPods-SpaceOddityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADA4ADAB2119D9ED7E3DE8A /* libPods-SpaceOddityTests.a */; };
+		9A3A05D922B2C87D007E886D /* MockLaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D963322AD3C0200F7A89E /* MockLaunchesService.swift */; };
+		9A3A05DC22B2CE10007E886D /* MockLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A05DB22B2CE10007E886D /* MockLaunches.swift */; };
+		9A3A05DE22B2CE15007E886D /* MockLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A05DB22B2CE10007E886D /* MockLaunches.swift */; };
+		9A3A05DF22B2D019007E886D /* MockLaunches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A05DB22B2CE10007E886D /* MockLaunches.swift */; };
+		9A3A05E222B2D098007E886D /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A05E022B2D094007E886D /* Identifiers.swift */; };
+		9A3A05E422B2D0E1007E886D /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A05E022B2D094007E886D /* Identifiers.swift */; };
 		9A7D95C622AABD4900F7A89E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7D95C522AABD4900F7A89E /* AppDelegate.swift */; };
 		9A7D95CD22AABD4A00F7A89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D95CC22AABD4A00F7A89E /* Assets.xcassets */; };
 		9A7D95D022AABD4A00F7A89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7D95CE22AABD4A00F7A89E /* LaunchScreen.storyboard */; };
@@ -69,6 +75,8 @@
 		6ADA4ADAB2119D9ED7E3DE8A /* libPods-SpaceOddityTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpaceOddityTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACBEF3A163B5ADC885926AB /* Pods-SpaceOddity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceOddity.release.xcconfig"; path = "Target Support Files/Pods-SpaceOddity/Pods-SpaceOddity.release.xcconfig"; sourceTree = "<group>"; };
 		92632AC9156445D5865F7839 /* libPods-SpaceOddityUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpaceOddityUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A3A05DB22B2CE10007E886D /* MockLaunches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunches.swift; sourceTree = "<group>"; };
+		9A3A05E022B2D094007E886D /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		9A7D95C222AABD4900F7A89E /* SpaceOddity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceOddity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7D95C522AABD4900F7A89E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A7D95CC22AABD4A00F7A89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 				9A7D963322AD3C0200F7A89E /* MockLaunchesService.swift */,
 				9A7D963522AD3E2700F7A89E /* LaunchesViewControllerTests.swift */,
 				9ADB4FC722B06EFE00A4EAAA /* LaunchDetailsTests.swift */,
+				9A3A05DB22B2CE10007E886D /* MockLaunches.swift */,
 			);
 			path = SpaceOddityTests;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 		9A7D95E422AABD4A00F7A89E /* SpaceOddityUITests */ = {
 			isa = PBXGroup;
 			children = (
+				9A3A05E022B2D094007E886D /* Identifiers.swift */,
 				9A7D95E522AABD4A00F7A89E /* SpaceOddityUITests.swift */,
 				9A7D95E722AABD4A00F7A89E /* Info.plist */,
 			);
@@ -542,14 +552,17 @@
 				9A7D961C22AD2D4700F7A89E /* LaunchDetailsViewController.swift in Sources */,
 				9A7D960422AACBF500F7A89E /* LaunchesResponse.swift in Sources */,
 				9A7D961122AAE36500F7A89E /* LaunchesViewController.swift in Sources */,
+				9A3A05E422B2D0E1007E886D /* Identifiers.swift in Sources */,
 				9ADB4FC622B06E7800A4EAAA /* DetailsRowType.swift in Sources */,
 				9A7D963122AD313C00F7A89E /* LaunchLocationTableViewCell.swift in Sources */,
 				9A7D962122AD30A200F7A89E /* LaunchSummaryTableViewCell.swift in Sources */,
 				9A7D963822AD5D4000F7A89E /* PaddingLabel.swift in Sources */,
 				9A7D960122AACB1A00F7A89E /* LaunchesServiceable.swift in Sources */,
+				9A3A05DF22B2D019007E886D /* MockLaunches.swift in Sources */,
 				9A7D961522AC511500F7A89E /* LaunchTableViewCell.swift in Sources */,
 				9A7D95FB22AAC83F00F7A89E /* Parser.swift in Sources */,
 				9A7D95F722AAC7E600F7A89E /* BaseViewController.swift in Sources */,
+				9A3A05D922B2C87D007E886D /* MockLaunchesService.swift in Sources */,
 				9A7D95F922AAC81800F7A89E /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +573,7 @@
 			files = (
 				9ADB4FC822B06EFE00A4EAAA /* LaunchDetailsTests.swift in Sources */,
 				9A7D963422AD3C0200F7A89E /* MockLaunchesService.swift in Sources */,
+				9A3A05DC22B2CE10007E886D /* MockLaunches.swift in Sources */,
 				9A7D963622AD3E2700F7A89E /* LaunchesViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +582,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3A05DE22B2CE15007E886D /* MockLaunches.swift in Sources */,
+				9A3A05E222B2D098007E886D /* Identifiers.swift in Sources */,
 				9A7D95E622AABD4A00F7A89E /* SpaceOddityUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

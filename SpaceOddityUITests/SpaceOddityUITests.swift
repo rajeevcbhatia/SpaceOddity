@@ -10,25 +10,85 @@ import XCTest
 
 class SpaceOddityUITests: XCTestCase {
 
+    private let happyFlowParameter = "testHappyFlow"
+    private let errorFlowParameter = "testErrorFlow"
+    
+    private var launchesTableView: XCUIElement {
+        return app.tables[Identifiers.launchesTableView.rawValue]
+    }
+    
+    private var launchDetailsTableView: XCUIElement {
+        return app.tables[Identifiers.launchDetailsTableView.rawValue]
+    }
+    
+    private var countdownLabel: XCUIElement {
+        return app.staticTexts[Identifiers.countdownLabel.rawValue]
+    }
+    
+    let app = XCUIApplication()
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    private func launchApp(with arguments: [String]) {
+        app.launchArguments = arguments
+        app.launch()
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testErrorShown() {
+        
+        launchApp(with: [errorFlowParameter])
+        
+        let alert = app.alerts.firstMatch
+        
+        let exists = NSPredicate(format: "exists == true")
+        expectation(for: exists, evaluatedWith: alert, handler: nil)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+    }
+    
+    func testAllRowsShownAndSearchWorking() {
+        
+        launchApp(with: [happyFlowParameter])
+        
+        XCTAssert(launchesTableView.cells.count == MockLaunches.launchesCount, "all launches not loaded at start")
+        
+        app.searchFields.firstMatch.tap()
+        app.searchFields.firstMatch.typeText(MockLaunches.searchQuery)
+        
+        XCTAssert(launchesTableView.cells.count == MockLaunches.expectedNumberOfSearches, "launches search not working")
+    }
+    
+    func testAllLaunchDetailsLoaded() {
+        launchApp(with: [happyFlowParameter])
+        
+        launchesTableView.cells.element(boundBy: MockLaunches.indexOfCompleteLaunch).tap()
+        
+        XCTAssert(launchDetailsTableView.cells.count == MockLaunches.numberOfRowsForCompleteLaunch, "all launch details not loaded")
+    }
+    
+    func testCountdownTextChangingForLaunchWithTime() {
+        launchApp(with: [happyFlowParameter])
+        launchesTableView.cells.element(boundBy: MockLaunches.indexOfCompleteLaunch).tap()
+        
+        let oldCountdownText = countdownLabel.label
+        sleep(3)
+        let newCountdownText = countdownLabel.label
+        
+        XCTAssertNotEqual(oldCountdownText, newCountdownText, "coundown text not changing")
+    }
+    
+    func testCountdownTextChangingForLaunchWithTBD() {
+        launchApp(with: [happyFlowParameter])
+        launchesTableView.cells.element(boundBy: MockLaunches.indexOfLaunchWithoutDate).tap()
+        
+        let oldCountdownText = countdownLabel.label
+        sleep(3)
+        let newCountdownText = countdownLabel.label
+        
+        XCTAssertEqual(oldCountdownText, newCountdownText, "coundown text changing for launch with TBD")
     }
 
 }

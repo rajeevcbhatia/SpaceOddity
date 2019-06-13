@@ -13,6 +13,7 @@ class LaunchDetailsViewController: BaseViewController {
 
     @IBOutlet weak var detailsTableView: UITableView! {
         didSet {
+            detailsTableView.accessibilityIdentifier = Identifiers.launchDetailsTableView.rawValue
             detailsTableView.dataSource = self
             detailsTableView.delegate = self
             registerCells()

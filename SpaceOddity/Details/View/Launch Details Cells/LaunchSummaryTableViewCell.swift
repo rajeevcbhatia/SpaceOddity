@@ -11,7 +11,11 @@ import UIKit
 class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var countdownLabel: UILabel! {
+        didSet {
+            countdownLabel.accessibilityIdentifier = Identifiers.countdownLabel.rawValue
+        }
+    }
     @IBOutlet weak var showDetailsButton: UIButton!
     
     @IBAction func showDetailsAction(_ sender: Any) {

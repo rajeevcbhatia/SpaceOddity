@@ -12,6 +12,7 @@ class LaunchesViewController: BaseViewController {
     
     @IBOutlet weak var launchesTableView: UITableView! {
         didSet {
+            launchesTableView.accessibilityIdentifier = Identifiers.launchesTableView.rawValue
             launchesTableView.estimatedRowHeight = 200.0
             launchesTableView.dataSource = self
             launchesTableView.delegate = self
