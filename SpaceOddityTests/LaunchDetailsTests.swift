@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 @testable import SpaceOddity
 
 class LaunchDetailsTests: XCTestCase {
@@ -69,7 +70,7 @@ class LaunchDetailsTests: XCTestCase {
             XCTFail("could not load all launch for test")
             return
         }
-        
-        XCTAssertFalse(launch.shouldShowTimer, "will show timer for launch that has TBD status") 
+        XCTAssertEqual(launch.statusColor, UIColor.darkGray, "correct color not set for launch that has TBD status")
+        XCTAssertFalse(launch.shouldShowTimer, "will show timer for launch that has TBD status")
     }
 }
