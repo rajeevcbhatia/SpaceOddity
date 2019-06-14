@@ -182,9 +182,9 @@
 		9A7D95C422AABD4900F7A89E /* SpaceOddity */ = {
 			isa = PBXGroup;
 			children = (
-				9A7D961922AD2CF900F7A89E /* Details */,
-				9A7D95FE22AACACC00F7A89E /* Launches */,
 				9A7D95F322AAC61500F7A89E /* Base */,
+				9A7D95FE22AACACC00F7A89E /* Launches */,
+				9A7D961922AD2CF900F7A89E /* Details */,
 			);
 			path = SpaceOddity;
 			sourceTree = "<group>";

@@ -62,6 +62,10 @@ struct Launch: Codable {
         }
     }
     
+    var shouldShowTimer: Bool {
+        return statusName == "Go" || statusName == "Success"
+    }
+    
     // also a hack, the colors could be in a constants file
     var statusColor: UIColor {
         switch status {

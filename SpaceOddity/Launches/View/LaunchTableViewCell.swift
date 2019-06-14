@@ -30,10 +30,10 @@ class LaunchTableViewCell: UITableViewCell, ReuseIdentifiable {
             statusLabel.backgroundColor = launch.statusColor
             statusLabel.text = launch.statusName
             
-            if launch.statusName == "TBD" {
-                timeLabel.text = "Time unknown"
-            } else {
+            if launch.shouldShowTimer {
                 timeLabel.text = launch.dateString
+            } else {
+                timeLabel.text = "Time unknown"
             }
             
             bgImageView.sd_setImage(with: URL(string: launch.rocket.imageURL), completed: nil)

@@ -31,14 +31,14 @@ class LaunchDetailsTests: XCTestCase {
     func testComponentsLoaded(launchIndex: Int, expectedDetailsRows: [DetailsRowType]) {
         
         guard let launch = allLaunches?[launchIndex] else {
-            XCTFail("could not load all launch for testAllComponentsLoaded")
+            XCTFail("could not load all launch for test")
             return
         }
         
         initSUT(with: launch)
         
         guard let launchDetailsVC = launchDetailsVC else {
-            XCTFail("could not load all launch for testAllComponentsLoaded")
+            XCTFail("could not load all launch for test")
             return
         }
         let detailsRows = DetailsRowType.detailsRows(for: launch)
@@ -62,5 +62,14 @@ class LaunchDetailsTests: XCTestCase {
     
     func testLaunchWithoutLocation() {
         testComponentsLoaded(launchIndex: MockLaunches.indexOfLaunchWithoutPad, expectedDetailsRows: [DetailsRowType.summary, .rocket, .mission])
+    }
+    
+    func testWillNotShowTimerForLaunchWithTBD() {
+        guard let launch = allLaunches?[MockLaunches.indexOfLaunchWithoutDate] else {
+            XCTFail("could not load all launch for test")
+            return
+        }
+        
+        XCTAssertFalse(launch.shouldShowTimer, "will show timer for launch that has TBD status") 
     }
 }

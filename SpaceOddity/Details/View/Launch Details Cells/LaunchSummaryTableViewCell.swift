@@ -30,11 +30,11 @@ class LaunchSummaryTableViewCell: UITableViewCell, ReuseIdentifiable {
         didSet {
             guard let launch = launch else { return }
             nameLabel.text = launch.name
-            if launch.statusName == "TBD" {
-                countdownLabel.text = "Time unknown"
-            } else {
+            if launch.shouldShowTimer {
                 startTimer()
                 updateTime()
+            } else {
+                countdownLabel.text = "Time unknown"
             }
             if launch.detailsURL == nil { showDetailsButton.isEnabled = false; showDetailsButton.setTitle("Details unavailable", for: .normal) }
         }
