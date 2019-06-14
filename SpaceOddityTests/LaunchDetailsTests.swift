@@ -12,9 +12,9 @@ import UIKit
 
 class LaunchDetailsTests: XCTestCase {
 
-    var launchDetailsVC: LaunchDetailsViewController?
+    private var launchDetailsVC: LaunchDetailsViewController?
     
-    lazy var allLaunches: [Launch]? = {
+    private lazy var allLaunches: [Launch]? = {
         guard let launchData = MockLaunches.successResponseString.data(using: .utf8), let launchesResponse: LaunchesResponse = Parser.decode(data: launchData) else { return nil }
         return launchesResponse.launches
     }()
@@ -28,8 +28,29 @@ class LaunchDetailsTests: XCTestCase {
         super.tearDown()
         launchDetailsVC = nil
     }
+
+    func testAllComponentsLoaded() {
+        assertComponentsLoaded(launchIndex: MockLaunches.indexOfCompleteLaunch, expectedDetailsRows: [DetailsRowType.summary, .rocket, .mission, .location])
+    }
     
-    func testComponentsLoaded(launchIndex: Int, expectedDetailsRows: [DetailsRowType]) {
+    func testLaunchWithoutMission() {
+        assertComponentsLoaded(launchIndex: MockLaunches.indexOfLaunchWithoutMission, expectedDetailsRows: [DetailsRowType.summary, .rocket, .location])
+    }
+    
+    func testLaunchWithoutLocation() {
+        assertComponentsLoaded(launchIndex: MockLaunches.indexOfLaunchWithoutPad, expectedDetailsRows: [DetailsRowType.summary, .rocket, .mission])
+    }
+    
+    func testWillNotShowTimerForLaunchWithTBD() {
+        guard let launch = allLaunches?[MockLaunches.indexOfLaunchWithoutDate] else {
+            XCTFail("could not load all launch for test")
+            return
+        }
+        XCTAssertEqual(launch.statusColor, UIColor.darkGray, "correct color not set for launch that has TBD status")
+        XCTAssertFalse(launch.shouldShowTimer, "will show timer for launch that has TBD status")
+    }
+    
+    private func assertComponentsLoaded(launchIndex: Int, expectedDetailsRows: [DetailsRowType]) {
         
         guard let launch = allLaunches?[launchIndex] else {
             XCTFail("could not load all launch for test")
@@ -51,26 +72,5 @@ class LaunchDetailsTests: XCTestCase {
             XCTAssertEqual(numberOfRows, detailsRows.count, "all details not loaded")
         }
         _ = XCTWaiter.wait(for: [expectation], timeout: 5.0)
-    }
-
-    func testAllComponentsLoaded() {
-        testComponentsLoaded(launchIndex: MockLaunches.indexOfCompleteLaunch, expectedDetailsRows: [DetailsRowType.summary, .rocket, .mission, .location])
-    }
-    
-    func testLaunchWithoutMission() {
-        testComponentsLoaded(launchIndex: MockLaunches.indexOfLaunchWithoutMission, expectedDetailsRows: [DetailsRowType.summary, .rocket, .location])
-    }
-    
-    func testLaunchWithoutLocation() {
-        testComponentsLoaded(launchIndex: MockLaunches.indexOfLaunchWithoutPad, expectedDetailsRows: [DetailsRowType.summary, .rocket, .mission])
-    }
-    
-    func testWillNotShowTimerForLaunchWithTBD() {
-        guard let launch = allLaunches?[MockLaunches.indexOfLaunchWithoutDate] else {
-            XCTFail("could not load all launch for test")
-            return
-        }
-        XCTAssertEqual(launch.statusColor, UIColor.darkGray, "correct color not set for launch that has TBD status")
-        XCTAssertFalse(launch.shouldShowTimer, "will show timer for launch that has TBD status")
     }
 }
